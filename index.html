@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Kod Yönlendirmesi</title>
+</head>
+<body>
+    <h2>Hoş Geldiniz</h2>
+    <button id="openApp">Uygulamayı Aç</button>
+
+    <script>
+        document.getElementById("openApp").addEventListener("click", function(){
+            // Özel URL şemasını kullanarak uygulamayı aç
+            window.location.href = "myapp://open?redirectUrl=" + encodeURIComponent(window.location.href);
+        });
+    </script>
+</body>
+</html>
