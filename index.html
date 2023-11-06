@@ -22,9 +22,9 @@
         document.getElementById("openApp1").addEventListener("click", function () {
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
-            var appSchemeUrl = "myapp://open?" + encodeURIComponent(window.location.href);
-            var appStoreUrl = "https://play.google.com/store/apps/details?id=com.generalnovember.sleepofjerry"; // App Store veya Google Play Store URL'niz
-            var timeout = 1000; // 1000 milisaniye = 1 saniye
+            var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent(window.location.href);
+            var appStoreUrl = "https://play.google.com/store/apps/details?id=com.generalnovember.sleepofjerry"; 
+            var timeout = 1000; 
 
             window.location.href = appSchemeUrl;
 
