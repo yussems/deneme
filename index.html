@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Kod Yönlendirmesi</title>
 </head>
+
 <body>
     <h2>Hoş Geldiniz</h2>
     <button id="openApp">Uygulamayı Aç</button>
+    <button id="openApp1">Uygulamayı Aç1</button>
 
     <script>
-        document.getElementById("openApp").addEventListener("click", function(){
-            // Özel URL şemasını kullanarak uygulamayı aç
+        document.getElementById("openApp").addEventListener("click", function () {
             window.location.href = "myapp://open?redirectUrl=" + encodeURIComponent(window.location.href);
+        });
+
+
+
+        document.getElementById("openApp1").addEventListener("click", function () {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var launchTime = new Date().getTime();
+            var appSchemeUrl = "myapp://open?redirectUrl=" + encodeURIComponent(window.location.href);
+            var appStoreUrl = "https://example.com/appstoreurl"; // App Store veya Google Play Store URL'niz
+            var timeout = 1000; // 1000 milisaniye = 1 saniye
+
+            window.location.href = appSchemeUrl;
+
+            setTimeout(function () {
+                var currentTime = new Date().getTime();
+                if (currentTime - launchTime < timeout + 500) { // 500ms yeterli zaman tamponu sağlamak için eklenir.
+                    if (isMobile) {
+                        window.location.href = appStoreUrl;
+                    } else {
+                        alert('Uygulamayı cihazınıza yükleyin.');
+                    }
+                }
+            }, timeout);
         });
     </script>
 </body>
+
 </html>
