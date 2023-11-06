@@ -11,18 +11,77 @@
     <h2>Hoş Geldiniz</h2>
     <button id="openApp">Uygulamayı Aç</button>
     <button id="openApp1">Uygulamayı Aç1</button>
+    <button id="openApp2">Uygulamayı Aç1</button>
+    <button id="openApp3">Uygulamayı Aç1</button>
 
     <script>
+        
+
+
         document.getElementById("openApp").addEventListener("click", function () {
-            window.location.href = "myapp://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-classics-half-day-tour-tour-1');
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var launchTime = new Date().getTime();
+            var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-classics-half-day-tour-tour-1');
+            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
+            var timeout = 1000; 
+
+            window.location.href = appSchemeUrl;
+
+            setTimeout(function () {
+                var currentTime = new Date().getTime();
+                if (currentTime - launchTime < timeout + 800) { 
+                    if (isMobile) {
+                        window.location.href = appStoreUrl;
+                    } else {
+                        alert('Uygulamayı cihazınıza yükleyin.');
+                    }
+                }
+            }, timeout);
         });
-
-
-
         document.getElementById("openApp1").addEventListener("click", function () {
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
-            var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent(window.location.href);
+            var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/event_service/en-whirling-dervish-show');
+            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
+            var timeout = 1000; 
+
+            window.location.href = appSchemeUrl;
+
+            setTimeout(function () {
+                var currentTime = new Date().getTime();
+                if (currentTime - launchTime < timeout + 800) { 
+                    if (isMobile) {
+                        window.location.href = appStoreUrl;
+                    } else {
+                        alert('Uygulamayı cihazınıza yükleyin.');
+                    }
+                }
+            }, timeout);
+        });
+        document.getElementById("openApp2").addEventListener("click", function () {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var launchTime = new Date().getTime();
+            var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-underground-half-day-tour-tour-und');
+            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
+            var timeout = 1000; 
+
+            window.location.href = appSchemeUrl;
+
+            setTimeout(function () {
+                var currentTime = new Date().getTime();
+                if (currentTime - launchTime < timeout + 800) { 
+                    if (isMobile) {
+                        window.location.href = appStoreUrl;
+                    } else {
+                        alert('Uygulamayı cihazınıza yükleyin.');
+                    }
+                }
+            }, timeout);
+        });
+        document.getElementById("openApp3").addEventListener("click", function () {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var launchTime = new Date().getTime();
+            var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/wellness/navitas-spa-sarnic-at-curio-collection-by-hilton');
             var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
             var timeout = 1000; 
 
