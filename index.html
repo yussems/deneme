@@ -14,7 +14,7 @@
 
     <script>
         document.getElementById("openApp").addEventListener("click", function () {
-            window.location.href = "myapp://open?redirectUrl=" + encodeURIComponent(window.location.href);
+            window.location.href = "myapp://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-classics-half-day-tour-tour-1');
         });
 
 
@@ -30,7 +30,7 @@
 
             setTimeout(function () {
                 var currentTime = new Date().getTime();
-                if (currentTime - launchTime < timeout + 500) { // 500ms yeterli zaman tamponu sağlamak için eklenir.
+                if (currentTime - launchTime < timeout + 500) { 
                     if (isMobile) {
                         window.location.href = appStoreUrl;
                     } else {
