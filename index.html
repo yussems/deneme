@@ -23,14 +23,14 @@
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
             var appSchemeUrl = "myapp://?path=/&redirectUrl=" + encodeURIComponent(window.location.href);
-            var appStoreUrl = "https://play.google.com/store/apps/details?id=com.generalnovember.sleepofjerry"; 
+            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
             var timeout = 1000; 
 
             window.location.href = appSchemeUrl;
 
             setTimeout(function () {
                 var currentTime = new Date().getTime();
-                if (currentTime - launchTime < timeout + 500) { 
+                if (currentTime - launchTime < timeout + 800) { 
                     if (isMobile) {
                         window.location.href = appStoreUrl;
                     } else {
