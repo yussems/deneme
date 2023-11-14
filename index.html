@@ -14,22 +14,23 @@
     <button id="openApp2">Uygulamayı Aç1</button>
     <button id="openApp3">Uygulamayı Aç1</button>
     <button id="four">webview</button>
+    <div id="salih"></div>
     <script>
-        
+
 
 
         document.getElementById("openApp").addEventListener("click", function () {
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
             var appSchemeUrl = "citio://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-classics-half-day-tour-tour-1');
-            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
-            var timeout = 1000; 
+            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry";
+            var timeout = 1000;
 
             window.location.href = appSchemeUrl;
 
             setTimeout(function () {
                 var currentTime = new Date().getTime();
-                if (currentTime - launchTime < timeout + 800) { 
+                if (currentTime - launchTime < timeout + 800) {
                     if (isMobile) {
                         window.location.href = appStoreUrl;
                     } else {
@@ -42,14 +43,14 @@
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
             var appSchemeUrl = "citio://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/event_service/en-whirling-dervish-show');
-            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry"; 
-            var timeout = 1000; 
+            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry";
+            var timeout = 1000;
 
             window.location.href = appSchemeUrl;
 
             setTimeout(function () {
                 var currentTime = new Date().getTime();
-                if (currentTime - launchTime < timeout + 800) { 
+                if (currentTime - launchTime < timeout + 800) {
                     if (isMobile) {
                         window.location.href = appStoreUrl;
                     } else {
@@ -62,14 +63,14 @@
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
             var appSchemeUrl = "citio://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-underground-half-day-tour-tour-und');
-            var appStoreUrl = "market://details?id=com.citio.hitatek"; 
-            var timeout = 1000; 
+            var appStoreUrl = "market://details?id=com.citio.hitatek";
+            var timeout = 1000;
 
             window.location.href = appSchemeUrl;
 
             setTimeout(function () {
                 var currentTime = new Date().getTime();
-                if (currentTime - launchTime < timeout + 800) { 
+                if (currentTime - launchTime < timeout + 800) {
                     if (isMobile) {
                         window.location.href = appStoreUrl;
                     } else {
@@ -82,14 +83,14 @@
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             var launchTime = new Date().getTime();
             var appSchemeUrl = "citio://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/wellness/navitas-spa-sarnic-at-curio-collection-by-hilton');
-            var appStoreUrl = "market://details?id=com.citio.hitatek"; 
-            var timeout = 1000; 
+            var appStoreUrl = "market://details?id=com.citio.hitatek";
+            var timeout = 1000;
 
             window.location.href = appSchemeUrl;
 
             setTimeout(function () {
                 var currentTime = new Date().getTime();
-                if (currentTime - launchTime < timeout + 800) { 
+                if (currentTime - launchTime < timeout + 800) {
                     if (isMobile) {
                         window.location.href = appStoreUrl;
                     } else {
@@ -99,8 +100,8 @@
             }, timeout);
         });
 
-        
-
+        const a = document.getElementById('four')
+        a.onclick(window.ReactNativeWebView.postMessage('dec'))
 
     </script>
 </body>
