@@ -24,10 +24,13 @@
 
 
         document.getElementById("openApp").addEventListener("click", function () {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var userAgent = navigator.userAgent;
+            var isAndroid = /Android/i.test(userAgent);
+            var isIOS = /iPhone|iPad|iPod/i.test(userAgent);
             var launchTime = new Date().getTime();
             var appSchemeUrl = "citio://?path=/&redirectUrl=" + encodeURIComponent('https://citio-8mmal3zhf-muhodev.vercel.app/tour/istanbul-classics-half-day-tour-tour-1');
-            var appStoreUrl = "market://details?id=com.generalnovember.sleepofjerry";
+            var appStoreUrlAndroid = "market://details?id=com.generalnovember.sleepofjerry";
+            var appStoreUrlIOS = "itms-apps://itunes.apple.com/app/idYOUR_IOS_APP_ID"; // iOS App Store URL'ünüzü buraya girin
             var timeout = 1000;
 
             window.location.href = appSchemeUrl;
@@ -35,8 +38,10 @@
             setTimeout(function () {
                 var currentTime = new Date().getTime();
                 if (currentTime - launchTime < timeout + 800) {
-                    if (isMobile) {
-                        window.location.href = appStoreUrl;
+                    if (isAndroid) {
+                        window.location.href = appStoreUrlAndroid;
+                    } else if (isIOS) {
+                        window.location.href = appStoreUrlIOS;
                     } else {
                         alert('Uygulamayı cihazınıza yükleyin.');
                     }
