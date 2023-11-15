@@ -103,20 +103,13 @@
                 }
             }, timeout);
         });
+
+
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        console.log(isMobile);
 
         const a = document.getElementById('four')
-        const urlParams = new URLSearchParams(window.location.search);
-        const inWebView = urlParams.get('inWebView') === 'true';
-        console.log(inWebView);
 
-
-
-        const w = document.getElementById('webview')
-        w.innerHTML = inWebView
         a.style.display = 'none'
-        console.log(window.ReactNativeWebView);
         if (isMobile && window.ReactNativeWebView) {
             a.style.display = 'block'
             a.addEventListener('click', () => {
