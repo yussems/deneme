@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Kod Yönlendirmesi</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -13,7 +14,9 @@
     <button id="openApp1">Uygulamayı Aç1</button>
     <button id="openApp2">Uygulamayı Aç1</button>
     <button id="openApp3">Uygulamayı Aç1</button>
-    <button id="four">webview</button>
+    <div>
+        <button id="four" onclick="window.ReactNativeWebView.postMessage('token123/1212')">webview</button>
+    </div>
     <div id="salih"></div>
     <script>
 
