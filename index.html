@@ -18,6 +18,7 @@
         <button id="four">webview</button>
     </div>
     <div id="salih"></div>
+    <p id="webview"></p>
     <script>
 
 
@@ -109,6 +110,11 @@
         const urlParams = new URLSearchParams(window.location.search);
         const inWebView = urlParams.get('inWebView') === 'true';
         console.log(inWebView);
+
+
+
+        const w = document.getElementById('webview')
+        w.innerHTML = inWebView +
         a.style.display = 'none'
         console.log(window.ReactNativeWebView);
         if (isMobile && window.ReactNativeWebView) {
