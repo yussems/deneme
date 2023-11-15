@@ -102,11 +102,21 @@
                 }
             }, timeout);
         });
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        console.log(isMobile);
 
         const a = document.getElementById('four')
-        a.addEventListener('click', () => {
-            window.ReactNativeWebView.postMessage('token123/1212')
-        })
+        a.style.display = 'none'
+
+        if (isMobile) {
+            a.style.display = 'block'
+
+            a.addEventListener('click', () => {
+                window.ReactNativeWebView.postMessage('token123/1212')
+
+            })
+        }
+
 
     </script>
 </body>
