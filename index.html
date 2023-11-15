@@ -108,7 +108,7 @@
         const a = document.getElementById('four')
         a.style.display = 'none'
 
-        if (isMobile) {
+        if (isMobile && window.ReactNativeWebView) {
             a.style.display = 'block'
 
             a.addEventListener('click', () => {
