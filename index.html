@@ -106,11 +106,13 @@
         console.log(isMobile);
 
         const a = document.getElementById('four')
+        const urlParams = new URLSearchParams(window.location.search);
+        const inWebView = urlParams.get('inWebView') === 'true';
+        console.log(inWebView);
         a.style.display = 'none'
         console.log(window.ReactNativeWebView);
         if (isMobile && window.ReactNativeWebView) {
             a.style.display = 'block'
-
             a.addEventListener('click', () => {
                 window.ReactNativeWebView.postMessage('token123/1212')
 
